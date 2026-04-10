@@ -4,6 +4,22 @@ const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          'img-src': [
+          "'self'",
+          'data:',
+          'blob:',
+          'https:',
+          ],
+        },
+      },
+    },
+  },
+
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
