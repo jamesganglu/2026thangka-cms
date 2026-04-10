@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "thangkas",
+  "info": {
+    "singularName": "thangka",
+    "pluralName": "thangkas",
+    "displayName": "thangka"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isAvailable": {
+      "type": "boolean",
+      "private": true,
+      "required": true,
+      "default": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "thangkas"
+    }
+  }
+}
